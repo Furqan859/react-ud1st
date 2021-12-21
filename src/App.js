@@ -1,6 +1,7 @@
 import react from 'react';
 import './app.css';
 import BlogCrad from './BlogCrad';
+import {isArrayEmpty} from './utils';
 function App() {
 
   const detCard = [
@@ -27,10 +28,10 @@ function App() {
       },
       
     ]
-    const car = detCard.map((item ,pos)=>{
-      console.log(item  )
+    const car =isArrayEmpty(detCard) ? [] : detCard.map((item ,pos)=>{
+      
       return(
-        <BlogCrad key={pos}/>
+        <BlogCrad key={pos} title={item.title} description={item.description} price={item.price} product={item.product}/>
       )
     })
 

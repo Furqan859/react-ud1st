@@ -1,11 +1,15 @@
 import react from "react"
-const BlogCrad = () => {
+import {dumpLogs} from './utils';
+
+const BlogCrad = (props) => {
+    dumpLogs(props)
+    
     return(
         <div className="blogsCard">
-        <h3>title</h3>
-        <span>description</span>
-        <h4>product</h4>
-        <span>price</span>
+        <h3>{props.title}</h3>
+        <span>{props.description}</span>
+        <h4>{props.product}</h4>
+        <span>{props.price}</span>
       </div>
     )
 }
