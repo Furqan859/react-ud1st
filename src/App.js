@@ -1,31 +1,41 @@
 import react from 'react';
-
+import './app.css';
 function App() {
-  const firstname = 'John';
-  const age = 28;
-  const job = "new job";
-  
-  const placeholder ="Enter your details"
-  const getFullName = (firstname) => `${firstname}`
-  const inputFieldBox = <input placeholder={placeholder} autoComplete/>
- const mArry = [1,2,3,4,5];
- const mObj = {
-   name: 'furqan',
-   age: 18,
-   job: 'programmer'
- };
-  return (
-   <div className="App">
-     <h1>first name : {getFullName(firstname)}</h1>
-   <p>age : {mObj.age}</p>
-   <h3> job : {mObj.job}</h3>
 
-   <input placeholder={placeholder} autoComplete/>
- {inputFieldBox} <br></br>
- {mArry[2]}  <br></br>
- {mArry[1]>0?"true":"false"} 
-   </div>
-  );
+  const detCard = {
+       title: 'Blog Card' ,
+       description: 'lorem ipsum dolor sit amet, consectetur adipiscing',
+       product: 'Phone',
+       Price : 20000
+  }
+ 
+  return (<div className="App">
+    <div className="blogsCard">
+      <h3>{detCard.title}</h3>
+      <span>{detCard.description}</span>
+      <h4>{detCard.product}</h4>
+      <span>{detCard.Price}</span>
+    </div>
+
+    <div className="blogsCard">
+      <h3>{detCard.title}</h3>
+      <span>{detCard.description}</span>
+      <h4>{detCard.product}</h4>
+      <span>{detCard.Price}</span>
+    </div>
+    <div className="blogsCard">
+      <h3>{detCard.title}</h3>
+      <span>{detCard.description}</span>
+      <h4>{detCard.product}</h4>
+      <span>{detCard.Price}</span>
+    </div>
+    <div className="blogsCard">
+      <h3>{detCard.title}</h3>
+      <span>{detCard.description}</span>
+      <h4>{detCard.product}</h4>
+      <span>{detCard.Price}</span>
+    </div>
+  </div>);
 }
 
 export default App;
