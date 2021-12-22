@@ -17,7 +17,7 @@ function App() {
         title: 'Blog Card 2' ,
         description: 'lorem ipsum dolor sit amet, consectetur adipiscing',
         product: 'led',
-        Price : 5000
+        Price : 9000
       },
       {
         
@@ -31,7 +31,7 @@ function App() {
     const car =isArrayEmpty(detCard) ? [] : detCard.map((item ,pos)=>{
       
       return(
-        <BlogCrad key={pos} title={item.title} description={item.description} price={item.price} product={item.product}/>
+        <BlogCrad key={pos} title={item.title} description={item.description} price={item.Price} product={item.product}/>
       )
     })
 
