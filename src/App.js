@@ -1,45 +1,22 @@
-import react from 'react';
-import './app.css';
-import BlogCrad from './BlogCrad';
-import {isArrayEmpty} from './utils';
+import React from 'react';
+
 function App() {
+  let name = "Furqan Rasool";
+  function todo () {
+    alert("Furqan")
+  }
+  
+  return (
+     
+    <div>
+<h1>{name}</h1>
+<button onClick={()=>todo()} >CLick me</button>
+<br></br> <br></br>
 
-  const detCard = [
-      {
-        
-        title: 'Blog Card 1' ,
-        description: 'lorem ipsum dolor sit amet, consectetur adipiscing',
-        product: 'Phone',
-        Price : 3000
-      },
-      {
-        
-        title: 'Blog Card 2' ,
-        description: 'lorem ipsum dolor sit amet, consectetur adipiscing',
-        product: 'led',
-        Price : 9000
-      },
-      {
-        
-        title: 'Blog Card 3' ,
-        description: 'lorem ipsum dolor sit amet, consectetur adipiscing',
-        product: 'laptop',
-        Price : 7000
-      },
-      
-    ]
-    const car =isArrayEmpty(detCard) ? [] : detCard.map((item ,pos)=>{
-      
-      return(
-        <BlogCrad key={pos} title={item.title} description={item.description} price={item.Price} product={item.product}/>
-      )
-    })
+<button onClick={todo}>CLick To Show</button>
 
-    
- 
-  return (<div className="App">
-    {car}
-</div>);
+    </div>
+  );
 }
 
 export default App;
