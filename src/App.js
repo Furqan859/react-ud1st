@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import Students from './Students';
 
 function App() {
-  
-  
+  const [data , setData] = useState("Usman")
+  function go () {
+    setData("Furqan")
+  }
   return (
      
     <div>
-          <Students name={"Furqan"} email="furqanrasool2@gmail.com" other={{mobile:"03055673859",adress:"lahore"}} />
-          <Students name={"Furqan"} email="furqanrasool2@gmail.com" other={{mobile:"03055673859",adress:"lahore"}} />
-          <Students name={"Furqan"} email="furqanrasool2@gmail.com" other={{mobile:"03055673859",adress:"lahore"}} />
-    </div>
+      {data}
+          <Students name={data}  />
+          <button onClick={go}>Click Me</button>
+          
+          </div>
   );
 }
 
