@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
+import Students from './Students';
 
 function App() {
-  const [data , setData] = useState("Furqan")
-  function todo () {
-  setData("Rasool")
-  }
+  
   
   return (
      
     <div>
-<h1>{data}</h1>
-<button onClick={()=>todo()} >CLick me</button>
-
-
+          <Students name={"Furqan"} email="furqanrasool2@gmail.com" other={{mobile:"03055673859",adress:"lahore"}} />
+          <Students name={"Furqan"} email="furqanrasool2@gmail.com" other={{mobile:"03055673859",adress:"lahore"}} />
+          <Students name={"Furqan"} email="furqanrasool2@gmail.com" other={{mobile:"03055673859",adress:"lahore"}} />
     </div>
   );
 }
