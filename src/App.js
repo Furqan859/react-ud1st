@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React,{useState} from 'react';
 
 function App() {
-  const [data , setData] = useState()
- 
+  const [name ,setName] = useState("");
+  const [tnc ,setTnc] = useState(false);
+  const [interest , setInterest] = useState("");
+  const onFormData = (e) => {
+    e.preventDefault()
+     console.log(name,tnc,interest);}
   return (
     <div>
-      {data?<h1>Hello World</h1>:null}
-<button onClick={()=>setData(!data)}>Toggle</button>
-{/* <button onClick={()=>setData(false)}>Hide</button> */}
+      <h1>Handle Form React</h1>
+     <form onSubmit={onFormData}>
+     <input type="text" placeholder="enter name" onChange={(e)=>setName(e.target.value)} />  <br />  <br />
+     <select onChange={(e)=>setInterest(e.target.value)}> <br />  <br />
+      <option>Selet Option</option>
+       <option>Marvel</option>
+       <option>DC</option>
+       <option>Network</option>
+     </select>
+     <br />  <br />
+     <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span>Accept Terms and Condions</span>
+     <br />  <br />
 
+     <button type="submit">Submit</button>
+     </form>
     </div>
   );
 }
