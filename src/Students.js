@@ -1,12 +1,9 @@
 import React from 'react';
 
 function Students(props) {
-    console.log(props)
     return (
         <div>
-            
-           <h1>Hello {props.data}</h1>
-            
+            <h1>Name : {props.name}</h1>
         </div>
     );
 }
