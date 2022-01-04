@@ -4,15 +4,26 @@ import {Table} from 'react-bootstrap';
 
 function App() {
   const user = [
-    {name:"Furqan" , email:"furqanrasool2@gmail.com" , contact:"03055673859" ,address:[{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"}]},
+    
+    
+    {
+      name:"Furqan" , email:"furqanrasool2@gmail.com" , contact:"03055673859" ,
+    address:[{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},
+    {houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},
+    {houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"}]
+  },
+
+
     {name:"Usman" , email:"usman@gmail.com" , contact:"03127221493",address:[{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},]},
     {name:"Ahmed" , email:"ahmed@gmail.com" , contact:"03164252198",address:[{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"}]},
     {name:"Ali" , email:"ali@gmail.com" , contact:"0309869867",address:[{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"},{houseNumber:"10D",state:"Punjab",city:"Lahore",country:"Pakistan"}]}
-  ]
+  
+ ]
    
   return (<div>
      <h1 style={{marginLeft:"40%"}}>Table Data </h1>
-     <Table  striped>
+     <Table hover striped>
+     <Table variant="dark" hover striped>
        <thead>
          <tr>
            <th>S.N</th>
@@ -30,10 +41,12 @@ function App() {
             <td>{item.name}</td>
             <td>{item.email}</td>
             <td>{item.contact}</td>
+
             <td>
-              <Table  striped variant="dark">
+              <Table  striped  variant="dark" hover>
                 <thead>
                   <tr>
+                    
                     <th>House Number</th>
                     <th>State</th>
                     <th>CIty</th>
@@ -42,8 +55,9 @@ function App() {
                 </thead>
                 <tbody>
               {
-              item.address.map((data)=>
-              <tr>
+              item.address.map((data ,a)=>
+              <tr key={a}>
+                
                 <td>{data.houseNumber}</td>
                 <td>{data.state}</td>
                 <td>{data.city}</td>
@@ -59,6 +73,7 @@ function App() {
           </tr>
            )
          }
+         </Table>
          
       </Table>
      </div>
