@@ -1,19 +1,15 @@
 import React from 'react';
-import User from './User'
-import "./user.css";
-
+import Child from './Child';
 
 function App() {
-  const user =[
-    {name:"furqan",contact:"0300",address:"12345"},
-    {name:"furqan",contact:"0300",address:"12345"},
-    {name:"furqan",contact:"0300",address:"12345"}
-  ]
+  function alertFunction(data) {
+    
+    alert(data)
+    
+  }
   return (
     <div>
-      { user.map((item ,i)=>
-      <User item={item} />  
-      )}
+      <Child name={alertFunction}/>
     </div>
   );
 }
