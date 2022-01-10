@@ -1,38 +1,43 @@
-import React,{useState} from 'react';
+import React from 'react';
+// import Main from './Main';
+import About from './About';
+// import Home from './Home';
+
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 
 function App() {
   return (
     <div>
-      <HOCRed cmp={Counter}/>
-      <HOCGreen cmp={Counter}/>
-      <HOCBlue cmp={Counter}/>
-    </div>
+
+      <h1>erer</h1>
+            <Link >Home</Link><br/>
+
+
+      {/* <About/> */}
+      
+
+      {/* <Router> */}
+
+      {/* <Link to="/home">Home</Link><br/> */}
+      {/* <Link to="/main">Main</Link><br/>
+      <Link to="/about">About</Link><br/> */}
+      {/* <Route path="/home"><Home/></Route> */}
+      
+      {/* <Route path="/home"><Home/></Route> */}
+      {/* <Route path="/about"><About/></Route> */}
+       
+       
+       {/* </Router> */}
+      </div>
+  );
+}
+function Home() {
+  return (
+      <div>
+          This is a home page
+      </div>
   );
 }
 
-function HOCRed(props){
-  return (<div>
-    <h2 style={{backgroundColor:'red', color:'blue'}}>Red<props.cmp/></h2>
-  </div>)
-}
-function HOCGreen(props){
-  return (<div>
-    <h2 style={{backgroundColor:'green' , color:'red'}}><props.cmp/>Green</h2>
-  </div>)
-}
-
-function HOCBlue(props){
-  return (<div>
-    <h2 style={{backgroundColor:'blue',color:'green'}}>Blue<props.cmp/></h2>
-  </div>)
-}
-
-function Counter(){
-  const [ count ,setCount] = useState(0)
-  return (<div>
-    <h1>{count} </h1><br/>
-    <button style={{color:"darkred", backgroundColor:"grey" , fontStyle:"italic", border:'none'}} onClick={()=>setCount(count + 1)}>Add One</button>
-  </div>)
-}
 
 export default App;
