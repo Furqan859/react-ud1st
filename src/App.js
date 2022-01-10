@@ -1,22 +1,38 @@
-import React,{useState,useMemo} from 'react';
+import React,{useState} from 'react';
 
 function App() {
-  const [update , setUpdate] = useState(0);
-  const [item , setItem] = useState(10);
-  
-  const memofunction = useMemo(function multicount(){
-    console.log("multicount")
-    return update*5
-  },[update])
   return (
     <div>
-      {memofunction}
-      <h1>{update}</h1>
-      <h1>{item}</h1>
-      <button onClick={()=>setUpdate(update+1)}>update</button>
-      <button onClick={()=>setItem(item*10)} >multi</button>
+      <HOCRed cmp={Counter}/>
+      <HOCGreen cmp={Counter}/>
+      <HOCBlue cmp={Counter}/>
     </div>
   );
+}
+
+function HOCRed(props){
+  return (<div>
+    <h2 style={{backgroundColor:'red', color:'blue'}}>Red<props.cmp/></h2>
+  </div>)
+}
+function HOCGreen(props){
+  return (<div>
+    <h2 style={{backgroundColor:'green' , color:'red'}}><props.cmp/>Green</h2>
+  </div>)
+}
+
+function HOCBlue(props){
+  return (<div>
+    <h2 style={{backgroundColor:'blue',color:'green'}}>Blue<props.cmp/></h2>
+  </div>)
+}
+
+function Counter(){
+  const [ count ,setCount] = useState(0)
+  return (<div>
+    <h1>{count} </h1><br/>
+    <button style={{color:"darkred", backgroundColor:"grey" , fontStyle:"italic", border:'none'}} onClick={()=>setCount(count + 1)}>Add One</button>
+  </div>)
 }
 
 export default App;
